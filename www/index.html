@@ -36,7 +36,7 @@
         <title></title>
     </head>
     <body>
-        <section id="main" data-transition="cover">
+        <section id="main" data-transition="slide">
             <header data-title="Encabezao"></header>
             <article id="main-article">
                 Articulo 1
@@ -51,19 +51,7 @@
                 <nav>
                      <a href="#" data-icon="menu" class="active" data-view-article="main-article"></a>
                      <a href="#" data-icon="share" data-view-article="main-article2"></a>
-                     <a href="#" data-icon="user" data-view-section="dos"></a>
-                </nav>
-            </footer>
-        </section>
-        <section id="dos" data-transition="cover">
-            <header data-title="Encabezao"></header>
-            <article id="main-article">
-                Otra seccion
-            </article>
-            <footer>
-                <nav>
-                     <a href="#" data-icon="menu" class="active" data-view-article="main-article"></a>
-                     <a href="#" data-icon="share" data-view-section="main"></a>
+                     <a href="#" data-icon="user" id="user"></a>
                 </nav>
             </footer>
         </section>
@@ -73,7 +61,15 @@
         <script type="text/javascript">
             //app.initialize();
             Lungo.init({
-                name: 'hello-world'
+                name: 'hello-world',
+                resources: ['seccion2.html']
+            });
+            Lungo.dom('#user').on('click', function(event) {
+                Lungo.Router.section("dos");
+            });
+            Lungo.dom('#share').on('click', function(event) {
+               // alert("gola");
+                Lungo.Router.section("main");
             });
         </script>
     </body>
