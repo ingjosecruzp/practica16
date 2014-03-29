@@ -37,7 +37,7 @@
     </head>
     <body>
         <section id="main" data-transition="slide">
-            <header data-title="Encabezao"></header>
+            <header data-title="Encabezado"></header>
             <article id="main-article">
                 Articulo 1
             </article>
@@ -51,7 +51,7 @@
                 <nav>
                      <a href="#" data-icon="menu" class="active" data-view-article="main-article"></a>
                      <a href="#" data-icon="share" data-view-article="main-article2"></a>
-                     <a href="#" data-icon="user" id="user"></a>
+                     <a href="#" data-icon="user" data-view-section="dos"></a>
                 </nav>
             </footer>
         </section>
@@ -59,17 +59,10 @@
         <script src="js/quo.js"></script>
         <script src="js/lungo.js"></script>
         <script type="text/javascript">
-            //app.initialize();
+            app.initialize();
             Lungo.init({
                 name: 'hello-world',
                 resources: ['seccion2.html']
-            });
-            Lungo.dom('#user').on('click', function(event) {
-                Lungo.Router.section("dos");
-            });
-            Lungo.dom('#share').on('click', function(event) {
-               // alert("gola");
-                Lungo.Router.section("main");
             });
         </script>
     </body>
